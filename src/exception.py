@@ -1,5 +1,5 @@
 import sys # allows access to system-specific parameters and functions, like command-line arguments and the Python runtime environment.
-import logging
+from src.logger import logging
 
 def error_message_detail(error,error_detail:sys):
     _,_,exc_tb=error_detail.exc_info()
