@@ -1,8 +1,6 @@
-# Something that related to data read
 import os
 import sys
 from src.exception import CustomException
-
 from src.logger import logging
 import pandas as pd
 
@@ -27,7 +25,7 @@ class DataIngestion:
     def initiate_data_ingestion(self):
         logging.info("Entered the data ingestion method or component")
         try:
-            df=pd.read_csv(r'notebook\data\stud.csv')
+            df=pd.read_csv('notebook\data\stud.csv')
             logging.info('Read the dataset as dataframe')
 
             os.makedirs(os.path.dirname(self.ingestion_config.train_data_path),exist_ok=True)
@@ -53,8 +51,6 @@ class DataIngestion:
         
 if __name__=="__main__":
     obj=DataIngestion()
-    obj.initiate_data_ingestion()
-
     train_data,test_data=obj.initiate_data_ingestion()
 
     data_transformation=DataTransformation()
@@ -65,21 +61,3 @@ if __name__=="__main__":
 
 
 
-
-'''
-So we are specifically reading the data set.
-
-And then we try to convert this into the raw data path.
-
-We converted that into CSV file.
-
-We did train test split.
-
-Then we saved the train file.
-
-We set the data.
-
-We saved the train test file.
-
-And then whatever things we are returning, we are basically returning the training data part and test
-'''
