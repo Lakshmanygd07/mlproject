@@ -8,7 +8,7 @@ class PredictPipeline:
     def __init__(self):
         pass
 
-    def predict(self,features): 
+    def predict(self,features):
         try:
             model_path=os.path.join("artifacts","model.pkl")
             preprocessor_path=os.path.join('artifacts','preprocessor.pkl')
@@ -25,7 +25,7 @@ class PredictPipeline:
 
 
 
-class CustomData: # It will responsible for mapping all the inputs that we are giving in the HTML to the back end with this particular values.
+class CustomData:
     def __init__(  self,
         gender: str,
         race_ethnicity: str,
@@ -49,7 +49,7 @@ class CustomData: # It will responsible for mapping all the inputs that we are g
 
         self.writing_score = writing_score
 
-    def get_data_as_data_frame(self): #It will return all the input in the form of Data Frame.
+    def get_data_as_data_frame(self):
         try:
             custom_data_input_dict = {
                 "gender": [self.gender],
